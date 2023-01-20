@@ -9,6 +9,9 @@ const LandingPage = () => {
         <div>
           <Link to="/usa" style={{textDecoration: "none", color: "white"}}> USA DATA </Link>
         </div>
+        <div>
+          <Link to='/test-data' style={{textDecoration: "none", color: "white"}}> TEST DATA USING D3 </Link>
+        </div>
     </>
   );
 };

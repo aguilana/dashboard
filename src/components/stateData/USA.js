@@ -10,6 +10,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -26,7 +27,6 @@ const USA = () => {
   const BOS = [];
   const SF = [];
 
-
   useEffect(() => {
     chart();
   }, [chart]);
@@ -35,7 +35,7 @@ const USA = () => {
     async function getUSAData() {
       const response = await fetch(DATA);
       const data = await response.text();
-      console.log(data)
+      console.log(data);
       // to parse the data can use /\n/ or '\n' to convert to regular expression
 
       const table = data.split("\n");
@@ -85,7 +85,6 @@ const USA = () => {
       pricesSF.forEach((price) => {
         SF.push(price);
       });
-      
     }
     getUSAData();
   }
@@ -175,6 +174,21 @@ const USA = () => {
       }}
     >
       <h1>USA</h1>
+      <Link to="/">
+        {" "}
+        <button
+          style={{
+            width: "80px",
+            height: "40px",
+            alignSelf: "center",
+            padding: "10px 20px",
+            borderRadius: "15px",
+            textAlign: "center",
+          }}
+        >
+          HOME
+        </button>
+      </Link>
       <div
         className="chart-container"
         style={{
