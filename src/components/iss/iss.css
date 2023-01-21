@@ -1,0 +1,28 @@
+.dashboard__iss-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard__iss-heading h1,
+.dashboard__iss-heading p {
+  font-family: var(--font-family);
+}
+
+.dashboard__iss-heading h1 {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+.dashboard__iss-heading p {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+/* MAP */
+.dashboard__iss-map {
+  width: 80vw;
+  height: 600px;
+margin: auto;
+}

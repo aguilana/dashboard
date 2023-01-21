@@ -1,10 +1,14 @@
 import "../styles/css/App.css";
-import { AppRoutes } from "./";
+import { AppRoutes, NavBar, Footer } from "./";
 
 function App() {
   return (
-    <div className="App App-header">
-      <AppRoutes />
+    <div className="App">
+      <div className="gradient__bg">
+        <NavBar />
+      </div>
+        <AppRoutes />
+        <Footer />
     </div>
   );
 }
