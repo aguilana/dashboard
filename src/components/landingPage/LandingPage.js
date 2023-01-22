@@ -35,9 +35,7 @@ const LandingPage = () => {
             <img src={dataSrc} />
           </div>
           <div className="dashboard__landing-page-link gradient__text">
-            <Link to="/usa">
-              DATA VIZ
-            </Link>
+            <Link to="/usa">DATA VIZ</Link>
           </div>
         </div>
         <div className="dashboard__landing-page-d3 section__padding">
@@ -56,8 +54,18 @@ const LandingPage = () => {
           </div>
           <div className="dashboard__landing-page-link">
             <Link to="/iss" className="gradient__text">
-             TRACKING: WHERE IS THE ISS?
+              TRACKING: WHERE IS THE ISS?
             </Link>
+          </div>
+        </div>
+        <div className="dashboard__landing-page-d3 section__padding">
+          <div className="dashboard__landing-page-link">
+            <Link to="/crypto" className="gradient__text">
+              CRYPTO
+            </Link>
+          </div>
+          <div className="dashboard__landing-page-image">
+            <img src={data} alt="" />
           </div>
         </div>
       </div>

@@ -3,16 +3,24 @@ import DATA from "../../data/usa-data.csv";
 import {
   Chart as ChartJS,
   BarElement,
+  LineElement,
   CategoryScale, // x axis
   LinearScale, // y axis
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+ChartJS.register(
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend,
+  LineElement
+);
 
 const USA = () => {
   const X_AXIS = [];

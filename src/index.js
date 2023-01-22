@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/css/index.css";
 import App from "./components/App";
 import { BrowserRouter as Router } from "react-router-dom";
+// require("dotenv").config();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
