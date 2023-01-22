@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   BarElement,
@@ -6,23 +6,43 @@ import {
   LinearScale,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const CryptoBar = () => {
-  const baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
-  console.log(process.env)
-  console.log(API_KEY)
- 
+  const [coinData, setCoinData] = useState([]);
+  const baseUrl = "https://api.coinranking.com/v2/coins/";
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
+  const fetchCoins = async () => {
+    try {
+      const { data } = await axios.get(`${proxyUrl}${baseUrl}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-access-token": `${API_KEY}`,
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+      console.log("COIN DATA:", data.data);
+      setCoinData(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchCoins();
+  }, [baseUrl, proxyUrl]);
 
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: coinData?.coins?.map((coin) => coin.name),
     datasets: [
       {
-        label: "# of votes",
-        data: [12, 19, 3, 5, 2, 3],
+        label: `${coinData?.coins?.length} Crypto `,
+        data: coinData?.coins?.map((coin) => coin.price),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
