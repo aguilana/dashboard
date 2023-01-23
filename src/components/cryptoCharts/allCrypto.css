@@ -1,0 +1,16 @@
+.dashboard__crypto-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 5rem;
+}
+
+.dashboard__crypto-container h2 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 75px;
+  letter-spacing: -0.04rem;
+}

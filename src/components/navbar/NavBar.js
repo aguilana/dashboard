@@ -34,7 +34,9 @@ const NavBar = () => {
         </div>
         <div className="dashboard__navbar-sign">
           <p>Sign In</p>
-          <button type="button">Sign up</button>
+          <Link to="/signup">
+            <button type="button">Sign up</button>
+          </Link>
         </div>
         <div className="dashboard__navbar-menu">
           {toggleMenu ? (
@@ -56,7 +58,9 @@ const NavBar = () => {
                 <Menu />
                 <div className="dashboard__navbar-menu_container-links-sign">
                   <p>Sign In</p>
-                  <button type="button">Sign up</button>
+                  <Link to="/signup">
+                    <button type="button">Sign up</button>
+                  </Link>
                 </div>
               </div>
             </div>

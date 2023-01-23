@@ -8,6 +8,7 @@ import {
   CryptoLine,
   CryptoPie,
   CryptoDoughnut,
+  SignUp,
 } from "./";
 import { Routes, Route } from "react-router-dom";
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route to="/" element={<LandingPage />} />
+        <Route path="/signup" element={<SignUp/>}/>
         <Route path="/usa" element={<USA />} />
         <Route path="/test-data" element={<TEST />} />
         <Route path="/iss" element={<ISS />} />

@@ -11,3 +11,4 @@ export { default as CryptoBar } from "./cryptoCharts/CryptoBar";
 export { default as CryptoLine } from "./cryptoCharts/CryptoLine";
 export { default as CryptoPie } from "./cryptoCharts/CryptoPie";
 export { default as CryptoDoughnut } from "./cryptoCharts/CryptoDoughnut";
+export { default as SignUp } from "./signup/SignUp"

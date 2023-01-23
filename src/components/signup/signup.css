@@ -1,0 +1,26 @@
+.dashboard__signup-container {
+    background: var(--color-blog);
+    font-family: var(--font-family);
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.dashboard__signup-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    max-width: 500px;
+    margin-right: 65px;
+}
+
+.dashboard__signup-card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
