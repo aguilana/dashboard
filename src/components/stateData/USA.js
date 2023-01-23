@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DATA from "../../data/usa-data.csv";
 import {
   Chart as ChartJS,
@@ -23,79 +23,100 @@ ChartJS.register(
 );
 
 const USA = () => {
-  const X_AXIS = [];
-  const USA = [];
-  const NY = [];
-  const LA = [];
-  const CHI = [];
-  const DLS = [];
-  const HOU = [];
-  const DC = [];
-  const MIA = [];
-  const BOS = [];
-  const SF = [];
+  const [X_AXIS, setX_AXIS] = useState();
+  const [USA, setUSA] = useState();
+  const [NY, setNY] = useState();
+  const [LA, setLA] = useState();
+  const [CHI, setCHI] = useState();
+  const [DLS, setDLS] = useState();
+  const [HOU, setHOU] = useState();
+  const [DC, setDC] = useState();
+  const [MIA, setMIA] = useState();
+  const [BOS, setBOS] = useState();
+  const [SF, setSF] = useState();
 
   useEffect(() => {
-    chart();
-  }, [chart]);
-
-  function chart() {
-    async function getUSAData() {
-      const response = await fetch(DATA);
-      const data = await response.text();
-      console.log(data);
-      // to parse the data can use /\n/ or '\n' to convert to regular expression
-
-      const table = data.split("\n");
-
-      const years = table[0].split("\t");
-      const prices = table[1].split("\t");
-      const pricesNY = table[2].split("\t");
-      const pricesLA = table[3].split("\t");
-      const pricesCHI = table[4].split("\t");
-      const pricesDLS = table[5].split("\t");
-      const pricesHOU = table[6].split("\t");
-      const pricesDC = table[7].split("\t");
-      const pricesMIA = table[8].split("\t");
-      const pricesBOS = table[9].split("\t");
-      const pricesSF = table[10].split("\t");
-
-      years.forEach((year) => {
-        X_AXIS.push(year);
-      });
-      prices.forEach((price) => {
-        USA.push(price);
-      });
-      pricesNY.forEach((price) => {
-        NY.push(price);
-      });
-      pricesLA.forEach((price) => {
-        LA.push(price);
-      });
-      pricesCHI.forEach((price) => {
-        CHI.push(price);
-      });
-      pricesDLS.forEach((price) => {
-        DLS.push(price);
-      });
-      pricesHOU.forEach((price) => {
-        HOU.push(price);
-      });
-      pricesDC.forEach((price) => {
-        DC.push(price);
-      });
-      pricesMIA.forEach((price) => {
-        MIA.push(price);
-      });
-      pricesBOS.forEach((price) => {
-        BOS.push(price);
-      });
-      pricesSF.forEach((price) => {
-        SF.push(price);
-      });
-    }
     getUSAData();
+  }, []);
+
+  async function getUSAData() {
+    const X_AXIS = [];
+    const USA = [];
+    const NY = [];
+    const LA = [];
+    const CHI = [];
+    const DLS = [];
+    const HOU = [];
+    const DC = [];
+    const MIA = [];
+    const BOS = [];
+    const SF = [];
+    const response = await fetch(DATA);
+    const data = await response.text();
+    console.log(data);
+    // to parse the data can use /\n/ or '\n' to convert to regular expression
+
+    const table = data.split("\n");
+
+    const years = table[0].split("\t");
+    const prices = table[1].split("\t");
+    const pricesNY = table[2].split("\t");
+    const pricesLA = table[3].split("\t");
+    const pricesCHI = table[4].split("\t");
+    const pricesDLS = table[5].split("\t");
+    const pricesHOU = table[6].split("\t");
+    const pricesDC = table[7].split("\t");
+    const pricesMIA = table[8].split("\t");
+    const pricesBOS = table[9].split("\t");
+    const pricesSF = table[10].split("\t");
+
+    years.forEach((year) => {
+      X_AXIS.push(year);
+    });
+    prices.forEach((price) => {
+      USA.push(price);
+    });
+    pricesNY.forEach((price) => {
+      NY.push(price);
+    });
+    pricesLA.forEach((price) => {
+      LA.push(price);
+    });
+    pricesCHI.forEach((price) => {
+      CHI.push(price);
+    });
+    pricesDLS.forEach((price) => {
+      DLS.push(price);
+    });
+    pricesHOU.forEach((price) => {
+      HOU.push(price);
+    });
+    pricesDC.forEach((price) => {
+      DC.push(price);
+    });
+    pricesMIA.forEach((price) => {
+      MIA.push(price);
+    });
+    pricesBOS.forEach((price) => {
+      BOS.push(price);
+    });
+    pricesSF.forEach((price) => {
+      SF.push(price);
+    });
+
+    setX_AXIS(X_AXIS);
+    setUSA(USA);
+    setNY(NY);
+    setLA(LA);
+    setCHI(CHI);
+    setDLS(DLS);
+    setHOU(HOU);
+    setDC(DC);
+    setMIA(MIA);
+    setBOS(BOS);
+    setSF(SF);
   }
+
   const options = {
     scales: {
       y: {

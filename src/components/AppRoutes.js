@@ -9,25 +9,47 @@ import {
   CryptoPie,
   CryptoDoughnut,
   SignUp,
+  Login,
+  ProtectedRoutes,
+  Account,
 } from "./";
 import { Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 const AppRoutes = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route to="/" element={<LandingPage />} />
-        <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/usa" element={<USA />} />
-        <Route path="/test-data" element={<TEST />} />
-        <Route path="/iss" element={<ISS />} />
-        <Route path="/crypto" element={<AllCrypto />} />
-        <Route path="/crypto/bar" element={<CryptoBar />} />
-        <Route path="/crypto/line" element={<CryptoLine />} />
-        <Route path="/crypto/pie" element={<CryptoPie />} />
-        <Route path="/crypto/doughnut" element={<CryptoDoughnut />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route to="/" element={<LandingPage />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/usa"
+            element={
+              <ProtectedRoutes>
+                <USA />
+              </ProtectedRoutes>
+            }
+          />
+          <Route path="/test-data" element={<TEST />} />
+          <Route path="/iss" element={<ISS />} />
+          <Route path="/crypto" element={<AllCrypto />} />
+          <Route path="/crypto/bar" element={<CryptoBar />} />
+          <Route path="/crypto/line" element={<CryptoLine />} />
+          <Route path="/crypto/pie" element={<CryptoPie />} />
+          <Route path="/crypto/doughnut" element={<CryptoDoughnut />} />
+          <Route
+            path="/my-account"
+            element={
+              <ProtectedRoutes>
+                <Account />
+              </ProtectedRoutes>
+            }
+          />
+        </Routes>
+      </AuthProvider>
     </>
   );
 };

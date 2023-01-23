@@ -1,6 +1,7 @@
 import React from "react";
 import ai from "../../assets/ai.png";
 import "./header.css";
+import butterfly from "../../assets/butterfly.png"
 
 const Header = () => {
   return (
@@ -23,7 +24,7 @@ const Header = () => {
         </div>
       </div>
       <div className="dashboard__header-image">
-        <img src={ai} alt="future image" />
+        <img src={butterfly} alt="future image" />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/logo192.png";
+import { useAuth } from "../context/AuthContext";
 
 const Menu = () => (
   <>
@@ -23,6 +24,18 @@ const Menu = () => (
 
 const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const { currentUser, logout } = useAuth();
+
+  const handleLogOut = () =>{
+    try{
+      logout()
+    }
+    catch(err){
+      console.log(err.message)
+    }
+  }
+
   return (
     <div className="dashboard__navbar">
       <div className="dashboard__navbar-links">
@@ -33,10 +46,12 @@ const NavBar = () => {
           <Menu />
         </div>
         <div className="dashboard__navbar-sign">
-          <p>Sign In</p>
-          <Link to="/signup">
+          <p>
+            {!currentUser ? <Link to="/login">Sign In</Link> : null}
+          </p>
+         {!currentUser ? <Link to="/signup">
             <button type="button">Sign up</button>
-          </Link>
+          </Link>: <button onClick={handleLogOut}>Log Out</button>}
         </div>
         <div className="dashboard__navbar-menu">
           {toggleMenu ? (

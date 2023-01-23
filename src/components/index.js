@@ -12,3 +12,7 @@ export { default as CryptoLine } from "./cryptoCharts/CryptoLine";
 export { default as CryptoPie } from "./cryptoCharts/CryptoPie";
 export { default as CryptoDoughnut } from "./cryptoCharts/CryptoDoughnut";
 export { default as SignUp } from "./signup/SignUp"
+export { default as Login } from "./login/Login"
+export { default as DataCharts } from "./dataCharts/dataCharts"
+export { default as Account } from "./protectedRoutes/Account"
+export { default as ProtectedRoutes } from "./protectedRoutes/ProtectedRoutes"

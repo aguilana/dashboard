@@ -1,14 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import "./signup.css";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 
 const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const [error, setError] = useState();
-  const [loading, setLoading] = useState(false)
-
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const { signup, currentUser } = useAuth();
 
   async function handleSubmit(e) {
@@ -19,38 +21,54 @@ const SignUp = () => {
     }
 
     try {
-      setError("")
-      setLoading(true)
+      setError("");
+      setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      navigate("/");
     } catch (err) {
-        setError("Failed to create an account")
+      setError(err.message);
     }
 
-    setLoading(false)
+    setLoading(false);
   }
 
   return (
     <div className="dashboard__signup-container section__padding">
       <div className="dashboard__signup-card">
+        {currentUser && JSON.stringify(currentUser.email)}
         <h2> Sign Up</h2>
-        {error && alert(error)}
-        <form className="dashboard__signup-card-form" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email"> Email </label>
-            <input type="text" ref={emailRef} />
+        {error && <Alert variant="danger">{error}</Alert>}
+        <form className="dashboard__signup-card-form " onSubmit={handleSubmit}>
+          <div className="dashboard__signup-card__input">
+            <input
+              type="text"
+              ref={emailRef}
+              placeholder="your email address"
+            />
           </div>
-          <div>
-            <label htmlFor="password"> Password </label>
-            <input type="password" ref={passwordRef} />
+          <div className="dashboard__signup-card__input">
+            <input type="password" ref={passwordRef} placeholder="password" />
           </div>
-          <div>
-            <label htmlFor="password-confirm"> Password Confirmation: </label>
-            <input type="password" ref={passwordConfirmRef} />
+          <div className="dashboard__signup-card__input">
+            <input
+              type="password"
+              ref={passwordConfirmRef}
+              placeholder=" re-type password"
+            />
           </div>
-          <button disabled={loading} type="submit"> Sign Up </button>
+          <button
+            disabled={loading}
+            type="submit"
+            className="dashboard__signup-card__input-button"
+          >
+            {" "}
+            Sign Up{" "}
+          </button>
         </form>
         <div>
-          <p>Already have an account? Log In</p>
+          <p>
+            Already have an account? <Link to="/login">Log In</Link>
+          </p>
         </div>
       </div>
     </div>
