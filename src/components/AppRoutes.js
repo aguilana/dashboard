@@ -12,6 +12,8 @@ import {
   Login,
   ProtectedRoutes,
   Account,
+  Search,
+  MyLocation,
 } from "./";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -40,6 +42,8 @@ const AppRoutes = () => {
           <Route path="/crypto/line" element={<CryptoLine />} />
           <Route path="/crypto/pie" element={<CryptoPie />} />
           <Route path="/crypto/doughnut" element={<CryptoDoughnut />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/location" element={<MyLocation />} />
           <Route
             path="/my-account"
             element={
