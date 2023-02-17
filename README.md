@@ -14,8 +14,8 @@ The goal of this "dashboard" is to keep experimenting with different technologie
 
 ## Sample
 
-![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/landing-page.png)
+![Alt text](src/assets/landing-page.png)
 
-![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/leaftlet-iss.png)
+![Alt text](src/assets/leaftlet-iss.png)
 
-![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/real-estate-data.png)
+![Alt text](src/assets/real-estate-data.png)
