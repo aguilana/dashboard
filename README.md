@@ -13,3 +13,9 @@ This feel free to fork, clone, npm install locally and check it out for yourself
 The goal of this "dashboard" is to keep experimenting with different technologies and keep the ones that stick.
 
 ## Sample
+
+![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/landing-page.png)
+
+![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/leaftlet-iss.png)
+
+![Alt text](vscode-local:/c%3A/Users/nagui/Documents/Coding/Pics/dashboard/real-estate-data.png)
