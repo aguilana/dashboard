@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+console.log("process env", process.env)
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 const MAP_STYLE = "mapbox://styles/aguilawebdev/clda9hdoh007u01mhdkoxp1vi";
 

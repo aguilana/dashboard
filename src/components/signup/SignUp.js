@@ -24,6 +24,10 @@ const SignUp = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      // post req into postgresql db?
+
+      // CHEF - address in DB
+      // user - address in DB but doesn't matter much.
       navigate("/");
     } catch (err) {
       setError(err.message);
