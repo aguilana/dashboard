@@ -14,7 +14,7 @@ The goal of this "dashboard" is to keep experimenting with different technologie
 
 ## Sample
 
-![Alt text](src/assets/ai.png)
+![Image](https://user-images.githubusercontent.com/53794440/231287162-e3ed8252-1f72-44cb-b697-d694334820d1.png)
 
 ![Alt text](src/assets/leaftlet-iss.png)
 
