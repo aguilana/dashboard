@@ -14,7 +14,7 @@ The goal of this "dashboard" is to keep experimenting with different technologie
 
 ## Sample
 
-![Alt text](src/assets/landing-page.png)
+![Alt text](src/assets/ai.png)
 
 ![Alt text](src/assets/leaftlet-iss.png)
 
